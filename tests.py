@@ -1,4 +1,24 @@
+from functions.get_file_content import get_file_content
 from functions.get_files_info import get_files_info
+
+result = get_file_content("calculator", "main.py")
+print(result)
+
+result = get_file_content("calculator", "pkg/calculator.py")
+print(result)
+
+result = get_file_content("calculator", "/bin/cat")
+print(result)
+
+result = get_file_content("calculator", "pkg/does_not_exist.py")
+print(result)
+
+
+
+
+'''
+result = get_file_content("calculator", "lorem.txt")
+print(result)
 
 print("Current dir test")
 result = get_files_info("calculator", ".")
@@ -24,3 +44,4 @@ print("Not a dir test")
 result = get_files_info("calculator", "3413fsaw")
 expected_result = "Result for '../' directory: Error: Cannot list \"../\" as it is outside the permitted working directory"
 print(result)
+'''
